@@ -3,6 +3,8 @@
 module.exports =
   activate: ->
     atom.workspaceView.command 'revert-buffer:revert', =>
-      editor = atom.workspaceView.getActivePaneItem()
-      fs.readFile editor.getPath(), (error, contents) ->
-        editor.setText(contents.toString()) unless error
+      paneItem = atom.workspaceView.getActivePaneItem()
+
+      return unless paneItem.getPath? and paneItem.setText?
+      fs.readFile paneItem.getPath(), (error, contents) ->
+        paneItem.setText(contents.toString()) unless error
