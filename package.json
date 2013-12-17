@@ -1,0 +1,20 @@
+{
+  "name": "revert-buffer",
+  "main": "./lib/revert-buffer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Revert a buffer to its on-disk contents",
+  "repository": "https://github.com/atom/revert-buffer",
+  "licenses": [
+    {
+      "type": "Apache",
+      "url": "http://github.com/atom/revert-buffer/raw/master/LICENSE.md"
+    }
+  ],
+  "engines": {
+    "atom": ">0.39.0"
+  },
+  "dependencies": {
+    "temp": "0.6.0"
+  }
+}
