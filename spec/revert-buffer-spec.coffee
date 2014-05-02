@@ -1,4 +1,5 @@
-{fs, WorkspaceView} = require 'atom'
+{WorkspaceView} = require 'atom'
+fs = require 'fs-plus'
 temp = require 'temp'
 
 RevertBuffer = require '../lib/revert-buffer'

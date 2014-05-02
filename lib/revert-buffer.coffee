@@ -1,4 +1,4 @@
-{fs} = require 'atom'
+fs = require 'fs-plus'
 
 module.exports =
   activate: ->
