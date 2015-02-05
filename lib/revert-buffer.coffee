@@ -1,10 +1,9 @@
-fs = require 'fs-plus'
-
 module.exports =
   activate: ->
-    atom.workspaceView.command 'revert-buffer:revert', =>
-      paneItem = atom.workspace.getActivePaneItem()
+    atom.commands.add 'atom-text-editor', 'revert-buffer:revert', ->
+      editor = atom.workspace.getActiveTextEditor()
+      return unless editor?.getPath()
 
-      return unless paneItem.getPath? and paneItem.setText?
-      fs.readFile paneItem.getPath(), (error, contents) ->
-        paneItem.setText(contents.toString()) unless error
+      fs = require 'fs-plus'
+      fs.readFile editor.getPath(), (error, contents) ->
+        editor.setText(contents.toString()) unless error
