@@ -1,4 +1,4 @@
-fs = require 'fs-plus'
+fs = require 'fs'
 temp = require 'temp'
 
 RevertBuffer = require '../lib/revert-buffer'
